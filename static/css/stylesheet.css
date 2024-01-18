@@ -1,0 +1,54 @@
+body{
+    background-color: #212121;
+    color: azure;
+    overflow: auto;
+    height: 100%;
+}
+
+.container {
+    width: 50%;
+    padding: 0px 0px 0px 0px;
+    margin: 10% auto; 
+    animation-name: container-grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: visible;
+    padding-bottom: 10px;
+}
+@keyframes container-grow{
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.select-wrapper input{
+    color: azure;
+}
+
+li{
+    background-color: #272727;
+}
+
+.select-dropdown li.disabled>span{
+    background-color: #1d1d1d;
+    color: azure;
+}
+
+.dropdown-content li:hover {
+    background-color: #1d1d1d !important;
+}
+.select-dropdown li.selected>span{
+    background-color: #1d1d1d;
+}
+
+.dropdown-content li>a, .dropdown-content li>span{
+    color: azure;
+
+}
+
+.dropdown-content {
+    z-index: 1003;
+}
