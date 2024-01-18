@@ -2,6 +2,10 @@
  
 ## Installation
 
+Change directory to the folder.
+```
+cd YouDownload (file path)
+```
 Create Virtual Environment folder.
 ```
 python3 -m venv venv
