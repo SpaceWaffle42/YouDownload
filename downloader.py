@@ -11,7 +11,7 @@ def directories(DIR_DATA):
         print("Data folder created.")
 
 def download_video(quality,video):
-    yt = YouTube(video)
+    yt = YouTube(video, use_oauth=True, allow_oauth_cache=True)
     py_path = pathlib.Path(__file__).parent.resolve()
 
     DIR_DATA = os.path.join(py_path, "data")
