@@ -2,11 +2,7 @@
  
 ## Installation
 
-Change directory to the app folder.
-```
-cd app
-```
-Creates Virtual Environment folder.
+Create Virtual Environment folder.
 ```
 python3 -m venv venv
 ```
