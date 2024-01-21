@@ -18,52 +18,52 @@
 
     <div class="container z-depth-4">
         <div class="row">
+            <div class="iframe-container">
+
             <div class="col s6 offset-l2" style="padding-top: 50px; padding-bottom: 50px;">
-                <iframe 
-                    width="560px" 
-                    height="315px" 
-                    src="https://www.youtube.com/embed/1DCBVxH86OE?si=WmzPZEBpDWkdeMux" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
+                <iframe id="youtube-iframe" frameborder="0" allowfullscreen></iframe>
+
+                <!-- <iframe src="https://www.youtube.com/embed/1DCBVxH86OE" frameborder="0" allowfullscreen></iframe> -->
+</div>
             </div>
             <form action="/process_form" method="post">
-                <div class="col s9">
-                    <input type="text" id="v_link" name="v_link" style="color: azure;" placeholder="Please provide video, channel or playlist link">
+                <div class="input-field col s12 m9">
+                    <input type="text" id="v_link" name="v_link" style="color: azure;"
+                        placeholder="Please provide video link">
                 </div>
-                <div class="col s3">
+                <div class="col s12 m3" style="padding-top: 15px;">
 
                     <select id="res" name="res">
-                      <option value="None" disabled selected >Choose your option</option>
-                      <option value="highest">highest</option>
-                      <option value="1080">1080p</option>
-                      <option value="720">720p</option>
-                      <option value="480">480p</option>
-                      <option value="360">360p</option>
-                      <option value="240">240p</option>
-                      <option value="144">144p</option>
+                        <option value="None" disabled selected>Choose your option</option>
+                        <option value="highest">highest</option>
+                        <option value="1080">1080p</option>
+                        <option value="720">720p</option>
+                        <option value="480">480p</option>
+                        <option value="360">360p</option>
+                        <option value="240">240p</option>
+                        <option value="144">144p</option>
                     </select>
-</div>
-                <div class="col s10">
+                </div>
+                <div class="col s10 m9">
                     <label>
-                        <input class="with-gap" name="a_check" type="checkbox" id="a_check" value="True"/>
-                        <span>Toggle audio only mode</span>
-                      </label>
-                    </div>
-                    <div class="col s2">
+                        <input class="with-gap" name="a_check" type="checkbox" id="a_check" value="True" />
+                        <span>Audio only</span>
+                    </label>
+                </div>
+                <div class="col s12 m3">
 
-                      <button class="btn waves-effect waves-light" id="SubmitBtn" type="submit" name="action" onclick="M.toast({html: 'Download request sent!'})">
+                    <button class="btn waves-effect waves-light" id="SubmitBtn" type="submit" name="action"
+                        onclick="M.toast({html: 'Download request sent!'})">
                         Submit
                         <i class="material-icons right">send</i>
-                      </button>
-                      </div>
+                    </button>
+                </div>
             </form>
         </div>
     </div>
-
+    <script src="{{ url_for('static', filename='js/youtubevidselect.js') }}"></script>
     <script src="{{ url_for('static', filename='js/selectboxes.js') }}"></script>
 
 </body>
+
 </html>
