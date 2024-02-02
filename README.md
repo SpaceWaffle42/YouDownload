@@ -1,5 +1,12 @@
 # YouDownload
 YouDownload is a YouTube downloader, hosted within a Flask-based web application. Designed for local deployment, YouDownload is a user-friendly web interface that enables users to effortlessly download videos from YouTube directly to their devices. This hosted provides the convenience of web access, allowing users to download from any device within their network.
+
+##Features
+- Resolution selection
+- Audio only mode
+- Dynamic video change on download
+- Downloads to local browser
+  
 ## Installation
 Change directory to the folder.
 ```
