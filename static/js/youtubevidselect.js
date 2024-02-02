@@ -26,5 +26,26 @@ function fetchVideoId() {
         .catch(error => console.error('Error fetching video ID:', error));
 }
 
-setInterval(fetchVideoId, 100);
-document.addEventListener('DOMContentLoaded', fetchVideoId);
+// Function to handle repeated fetching with delay
+function repeatFetchVideoId(times, delay) {
+    function attemptFetch(remainingAttempts) {
+        if (remainingAttempts > 0) {
+            fetchVideoId(); // Call your fetch function
+            setTimeout(() => attemptFetch(remainingAttempts - 1), delay);
+        }
+    }
+    attemptFetch(times);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch the video ID three times with a 10-second delay between each fetch
+    repeatFetchVideoId(3, 10000); // 3 times, 10000 ms (10 seconds) delay
+
+    // Add event listener for the submit button click
+    const submitBtn = document.getElementById('SubmitBtn');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', () => repeatFetchVideoId(3, 10000)); // Also fetch 3 times on click, with delay
+    } else {
+        console.error('Submit button not found!');
+    }
+});
