@@ -87,7 +87,6 @@ while state_toggle == True:
                 print('\n**WARNING**\nVideo is longer than 15 minuites! Please be patient!\n**WARNING**\n') 
 
             download_vid = yt.streams.get_highest_resolution()
-
             download_vid.download(d_loc)
 
             time_secs = time.gmtime(yt.length)
