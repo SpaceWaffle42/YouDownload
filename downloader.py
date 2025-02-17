@@ -1,4 +1,6 @@
-from pytube import YouTube, Playlist, Channel
+# from pytube import YouTube, Playlist, Channel
+from pytubefix import YouTube, Playlist, Channel
+
 import os
 import pathlib
 import re
@@ -11,9 +13,8 @@ def directories(DIR_DATA):
         os.mkdir(os.path.join(DIR_DATA))
         print("Data folder created.")
 
-
 def download_video(quality, video):
-    yt = YouTube(video, use_oauth=True, allow_oauth_cache=True)
+    yt = YouTube(video, use_oauth=False, allow_oauth_cache=False)
     py_path = pathlib.Path(__file__).parent.resolve()
     DIR_DATA = os.path.join(py_path, "data")
 
@@ -39,7 +40,7 @@ def download_video(quality, video):
 
 
 def download_audio(video):
-    yt = YouTube(video, use_oauth=True, allow_oauth_cache=True)
+    yt = YouTube(video, use_oauth=False, allow_oauth_cache=False)
     py_path = pathlib.Path(__file__).parent.resolve()
     DIR_DATA = os.path.join(py_path, "data")
 
